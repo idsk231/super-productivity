@@ -15,6 +15,8 @@ import { GiteaCfg } from './providers/gitea/gitea.model';
 import { GiteaIssue } from './providers/gitea/gitea-issue.model';
 import { RedmineCfg } from './providers/redmine/redmine.model';
 import { RedmineIssue } from './providers/redmine/redmine-issue.model';
+import { FeishuCfg } from './providers/feishu/feishu.model';
+import { FeishuIssue, FeishuIssueReduced } from './providers/feishu/feishu-issue.model';
 import { EntityState } from '@ngrx/entity';
 import {
   CalendarProviderCfg,
@@ -34,7 +36,8 @@ export type IssueProviderKey =
   | 'ICAL'
   | 'OPEN_PROJECT'
   | 'GITEA'
-  | 'REDMINE';
+  | 'REDMINE'
+  | 'FEISHU';
 
 export type IssueIntegrationCfg =
   | JiraCfg
@@ -44,7 +47,8 @@ export type IssueIntegrationCfg =
   | CalendarProviderCfg
   | OpenProjectCfg
   | GiteaCfg
-  | RedmineCfg;
+  | RedmineCfg
+  | FeishuCfg;
 
 export enum IssueLocalState {
   OPEN = 'OPEN',
@@ -62,6 +66,7 @@ export interface IssueIntegrationCfgs {
   OPEN_PROJECT?: OpenProjectCfg;
   GITEA?: GiteaCfg;
   REDMINE?: RedmineCfg;
+  FEISHU?: FeishuCfg;
 }
 
 export type IssueData =
@@ -72,7 +77,8 @@ export type IssueData =
   | ICalIssue
   | OpenProjectWorkPackage
   | GiteaIssue
-  | RedmineIssue;
+  | RedmineIssue
+  | FeishuIssue;
 
 export type IssueDataReduced =
   | GithubIssueReduced
@@ -82,7 +88,8 @@ export type IssueDataReduced =
   | CaldavIssueReduced
   | ICalIssueReduced
   | GiteaIssue
-  | RedmineIssue;
+  | RedmineIssue
+  | FeishuIssueReduced;
 
 export type IssueDataReducedMap = {
   [K in IssueProviderKey]: K extends 'JIRA'
@@ -101,7 +108,9 @@ export type IssueDataReducedMap = {
                 ? GiteaIssue
                 : K extends 'REDMINE'
                   ? RedmineIssue
-                  : never;
+                  : K extends 'FEISHU'
+                    ? FeishuIssueReduced
+                    : never;
 };
 
 export interface SearchResultItem<
@@ -172,6 +181,10 @@ export interface IssueProviderCalendar extends IssueProviderBase, CalendarProvid
   issueProviderKey: 'ICAL';
 }
 
+export interface IssueProviderFeishu extends IssueProviderBase, FeishuCfg {
+  issueProviderKey: 'FEISHU';
+}
+
 export type IssueProvider =
   | IssueProviderJira
   | IssueProviderGithub
@@ -180,7 +193,8 @@ export type IssueProvider =
   | IssueProviderCalendar
   | IssueProviderOpenProject
   | IssueProviderGitea
-  | IssueProviderRedmine;
+  | IssueProviderRedmine
+  | IssueProviderFeishu;
 
 export type IssueProviderTypeMap<T extends IssueProviderKey> = T extends 'JIRA'
   ? IssueProviderJira
@@ -196,6 +210,8 @@ export type IssueProviderTypeMap<T extends IssueProviderKey> = T extends 'JIRA'
             ? IssueProviderRedmine
             : T extends 'CALDAV'
               ? IssueProviderCaldav
-              : T extends 'ICAL'
-                ? IssueProviderCalendar
-                : never;
+              : T extends 'FEISHU'
+                ? IssueProviderFeishu
+                : T extends 'ICAL'
+                  ? IssueProviderCalendar
+                  : never;

@@ -12,6 +12,7 @@ import { CALDAV_ISSUE_CONTENT_CONFIG } from '../providers/caldav/caldav-issue-co
 import { GITEA_ISSUE_CONTENT_CONFIG } from '../providers/gitea/gitea-issue-content.const';
 import { REDMINE_ISSUE_CONTENT_CONFIG } from '../providers/redmine/redmine-issue-content.const';
 import { OPEN_PROJECT_ISSUE_CONTENT_CONFIG } from '../providers/open-project/open-project-issue-content.const';
+import { FEISHU_ISSUE_CONTENT_CONFIG } from '../providers/feishu/feishu-issue-content.const';
 
 // Re-export types for backwards compatibility
 export { IssueFieldType, IssueFieldConfig, IssueCommentConfig, IssueContentConfig };
@@ -24,6 +25,7 @@ export const ISSUE_CONTENT_CONFIGS: Record<IssueProviderKey, IssueContentConfig<
   GITEA: GITEA_ISSUE_CONTENT_CONFIG,
   REDMINE: REDMINE_ISSUE_CONTENT_CONFIG,
   OPEN_PROJECT: OPEN_PROJECT_ISSUE_CONTENT_CONFIG,
+  FEISHU: FEISHU_ISSUE_CONTENT_CONFIG,
   ICAL: {
     issueType: 'ICAL',
     fields: [],

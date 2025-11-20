@@ -29,6 +29,10 @@ import {
   CALENDAR_FORM_CFG_NEW,
   DEFAULT_CALENDAR_CFG,
 } from './providers/calendar/calendar.const';
+import {
+  DEFAULT_FEISHU_CFG,
+  FEISHU_CONFIG_FORM_SECTION,
+} from './providers/feishu/feishu-cfg-form.const';
 
 export const DELAY_BEFORE_ISSUE_POLLING = 8000;
 
@@ -40,6 +44,7 @@ export const OPEN_PROJECT_TYPE: IssueProviderKey = 'OPEN_PROJECT';
 export const GITEA_TYPE: IssueProviderKey = 'GITEA';
 export const REDMINE_TYPE: IssueProviderKey = 'REDMINE';
 export const ICAL_TYPE: IssueProviderKey = 'ICAL';
+export const FEISHU_TYPE: IssueProviderKey = 'FEISHU';
 
 export const ISSUE_PROVIDER_TYPES: IssueProviderKey[] = [
   GITLAB_TYPE,
@@ -50,6 +55,7 @@ export const ISSUE_PROVIDER_TYPES: IssueProviderKey[] = [
   OPEN_PROJECT_TYPE,
   GITEA_TYPE,
   REDMINE_TYPE,
+  FEISHU_TYPE,
 ] as const;
 
 export const ISSUE_PROVIDER_ICON_MAP = {
@@ -61,6 +67,7 @@ export const ISSUE_PROVIDER_ICON_MAP = {
   [OPEN_PROJECT_TYPE]: 'open_project',
   [GITEA_TYPE]: 'gitea',
   [REDMINE_TYPE]: 'redmine',
+  [FEISHU_TYPE]: 'chat',
 } as const;
 
 export const ISSUE_PROVIDER_HUMANIZED = {
@@ -72,6 +79,7 @@ export const ISSUE_PROVIDER_HUMANIZED = {
   [OPEN_PROJECT_TYPE]: 'OpenProject',
   [GITEA_TYPE]: 'Gitea',
   [REDMINE_TYPE]: 'Redmine',
+  [FEISHU_TYPE]: 'Feishu',
 } as const;
 
 export const DEFAULT_ISSUE_PROVIDER_CFGS = {
@@ -83,6 +91,7 @@ export const DEFAULT_ISSUE_PROVIDER_CFGS = {
   [OPEN_PROJECT_TYPE]: DEFAULT_OPEN_PROJECT_CFG,
   [GITEA_TYPE]: DEFAULT_GITEA_CFG,
   [REDMINE_TYPE]: DEFAULT_REDMINE_CFG,
+  [FEISHU_TYPE]: DEFAULT_FEISHU_CFG,
 } as const;
 
 export const ISSUE_PROVIDER_FORM_CFGS_MAP = {
@@ -94,6 +103,7 @@ export const ISSUE_PROVIDER_FORM_CFGS_MAP = {
   [OPEN_PROJECT_TYPE]: OPEN_PROJECT_CONFIG_FORM_SECTION,
   [GITEA_TYPE]: GITEA_CONFIG_FORM_SECTION,
   [REDMINE_TYPE]: REDMINE_CONFIG_FORM_SECTION,
+  [FEISHU_TYPE]: FEISHU_CONFIG_FORM_SECTION,
 } as const;
 
 const DEFAULT_ISSUE_STRS: { ISSUE_STR: string; ISSUES_STR: string } = {

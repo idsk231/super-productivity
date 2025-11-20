@@ -170,6 +170,43 @@
         "CAL_PROVIDER_ERROR": "Calendar Provider Error: {{errTxt}}"
       }
     },
+    "FEISHU": {
+      "FORM": {
+        "APP_ID": "App ID",
+        "APP_SECRET": "App Secret",
+        "IS_SEARCH_ISSUES_FROM_API": "Search tasks from API",
+        "IS_AUTO_POLL": "Auto poll for updates",
+        "IS_AUTO_ADD_TO_BACKLOG": "Auto add new tasks to backlog",
+        "FILTER_USER_ID": "Filter by user ID",
+        "FILTER_USER_ID_DESCRIPTION": "Only show tasks assigned to this user (use Feishu Open ID)",
+        "FILTER_TASKLIST_IDS": "Filter by tasklist IDs",
+        "FILTER_TASKLIST_IDS_DESCRIPTION": "Comma-separated list of tasklist GUIDs to filter",
+        "IS_TWO_WAY_SYNC": "Enable two-way sync",
+        "IS_TWO_WAY_SYNC_DESCRIPTION": "Sync task changes from Super Productivity back to Feishu (requires write permissions)",
+        "IS_SYNC_TASK_STATUS": "Sync task completion status",
+        "IS_SYNC_TASK_CONTENT": "Sync task title and description",
+        "IS_SYNC_COMMENTS": "Sync comments",
+        "IS_SYNC_COMMENTS_DESCRIPTION": "Add comments from notes to Feishu tasks"
+      },
+      "FORM_SECTION": {
+        "HELP": "Connect to Feishu/Lark to sync your tasks. Get your App ID and App Secret from Feishu Open Platform."
+      },
+      "ISSUE_CONTENT": {
+        "CREATOR": "Creator",
+        "MEMBERS": "Members",
+        "DUE_DATE": "Due Date",
+        "TASKLISTS": "Task Lists",
+        "SUBTASK_COUNT": "Subtasks"
+      },
+      "S": {
+        "MISSING_APP_ID": "Feishu: Missing App ID",
+        "MISSING_APP_SECRET": "Feishu: Missing App Secret",
+        "AUTH_ERROR": "Feishu: Authentication failed. Please check your App ID and App Secret",
+        "GENERAL_ERROR": "Feishu: Request failed",
+        "UNKNOWN_ERROR": "Feishu: Unknown error occurred",
+        "CONFIG_ERROR": "Feishu: Configuration error"
+      }
+    },
     "CONFIG": {
       "S": {
         "UPDATE_SECTION": "Updated settings for <strong>{{sectionKey}}</strong>"

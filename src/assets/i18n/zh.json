@@ -153,6 +153,43 @@
         "ISSUE_NOT_FOUND": "CalDav: 待办事项 \"{{issueId}}\" 似乎在服务器上已被删除。"
       }
     },
+    "FEISHU": {
+      "FORM": {
+        "APP_ID": "应用 ID",
+        "APP_SECRET": "应用密钥",
+        "IS_SEARCH_ISSUES_FROM_API": "从 API 搜索任务",
+        "IS_AUTO_POLL": "自动轮询更新",
+        "IS_AUTO_ADD_TO_BACKLOG": "自动添加新任务到待办列表",
+        "FILTER_USER_ID": "按用户 ID 过滤",
+        "FILTER_USER_ID_DESCRIPTION": "仅显示分配给此用户的任务（使用飞书 Open ID）",
+        "FILTER_TASKLIST_IDS": "按任务列表 ID 过滤",
+        "FILTER_TASKLIST_IDS_DESCRIPTION": "逗号分隔的任务列表 GUID 列表",
+        "IS_TWO_WAY_SYNC": "启用双向同步",
+        "IS_TWO_WAY_SYNC_DESCRIPTION": "将 Super Productivity 中的任务更改同步回飞书（需要写入权限）",
+        "IS_SYNC_TASK_STATUS": "同步任务完成状态",
+        "IS_SYNC_TASK_CONTENT": "同步任务标题和描述",
+        "IS_SYNC_COMMENTS": "同步评论",
+        "IS_SYNC_COMMENTS_DESCRIPTION": "将备注中的评论添加到飞书任务"
+      },
+      "FORM_SECTION": {
+        "HELP": "连接飞书/Lark 以同步您的任务。从飞书开放平台获取您的应用 ID 和应用密钥。"
+      },
+      "ISSUE_CONTENT": {
+        "CREATOR": "创建者",
+        "MEMBERS": "成员",
+        "DUE_DATE": "截止日期",
+        "TASKLISTS": "任务列表",
+        "SUBTASK_COUNT": "子任务"
+      },
+      "S": {
+        "MISSING_APP_ID": "飞书：缺少应用 ID",
+        "MISSING_APP_SECRET": "飞书：缺少应用密钥",
+        "AUTH_ERROR": "飞书：认证失败。请检查您的应用 ID 和应用密钥",
+        "GENERAL_ERROR": "飞书：请求失败",
+        "UNKNOWN_ERROR": "飞书：发生未知错误",
+        "CONFIG_ERROR": "飞书：配置错误"
+      }
+    },
     "CALENDARS": {
       "BANNER": {
         "ADD_AS_TASK": "添加为任务",

@@ -11,6 +11,7 @@ import { TaskAttachment } from '../tasks/task-attachment/task-attachment.model';
 import { forkJoin, from, merge, Observable, of, Subject } from 'rxjs';
 import {
   CALDAV_TYPE,
+  FEISHU_TYPE,
   GITEA_TYPE,
   GITHUB_TYPE,
   GITLAB_TYPE,
@@ -39,6 +40,7 @@ import { T } from '../../t.const';
 import { TranslateService } from '@ngx-translate/core';
 import { CalendarCommonInterfacesService } from './providers/calendar/calendar-common-interfaces.service';
 import { ICalIssueReduced } from './providers/calendar/calendar.model';
+import { FeishuCommonInterfacesService } from './providers/feishu/feishu-common-interfaces.service';
 import { WorkContextType } from '../work-context/work-context.model';
 import { WorkContextService } from '../work-context/work-context.service';
 import { ProjectService } from '../project/project.service';
@@ -66,6 +68,7 @@ export class IssueService {
   private _giteaInterfaceService = inject(GiteaCommonInterfacesService);
   private _redmineInterfaceService = inject(RedmineCommonInterfacesService);
   private _calendarCommonInterfaceService = inject(CalendarCommonInterfacesService);
+  private _feishuCommonInterfaceService = inject(FeishuCommonInterfacesService);
   private _issueProviderService = inject(IssueProviderService);
   private _workContextService = inject(WorkContextService);
   private _snackService = inject(SnackService);
@@ -84,6 +87,7 @@ export class IssueService {
     [GITEA_TYPE]: this._giteaInterfaceService,
     [REDMINE_TYPE]: this._redmineInterfaceService,
     [ICAL_TYPE]: this._calendarCommonInterfaceService,
+    [FEISHU_TYPE]: this._feishuCommonInterfaceService,
   };
 
   ISSUE_REFRESH_MAP: {

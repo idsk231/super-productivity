@@ -19,6 +19,8 @@ export const getIssueProviderTooltip = (issueProvider: IssueProvider): string =>
         return issueProvider.projectId;
       case 'OPEN_PROJECT':
         return issueProvider.projectId;
+      case 'FEISHU':
+        return issueProvider.appId;
     }
   })();
   return v || issueProvider.issueProviderKey;
@@ -82,6 +84,8 @@ export const getIssueProviderInitials = (
       return getRepoInitials(issueProvider.project);
     case 'GITEA':
       return getRepoInitials(issueProvider.repoFullname);
+    case 'FEISHU':
+      return issueProvider.appId?.substring(0, 2).toUpperCase();
   }
   return undefined;
 };
